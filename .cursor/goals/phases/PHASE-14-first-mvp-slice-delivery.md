@@ -1,0 +1,22 @@
+# PHASE-14-first-mvp-slice-delivery
+
+- Horizon: MVP
+- Specification state: DEFINED
+- Execution state: READY
+- Objective: Deliver the Human-authorized Command OS first slice with evidence, in **large batches** (one Task execution produces a working subsystem, not a micro-step). Do **not** execute `.cursor/docs/superpowers/plans/2026-08-29-petia-command-os.md` as the execution script.
+- In scope: Cadastro 360 operacional, agenda, OS banho & tosa, copiloto WhatsApp, PIX/link webhook, pet timeline, shop-floor surfaces, Command OS guardrails, isolation tests.
+- Out of scope: 22 discovery domains, holding, estoque, planos, delivery, CRM campanha, copiloto executivo, app do tutor, NFe, intelligence preditiva, following the superpowers plan task-by-task TDD micro-steps.
+- Hard dependencies: PHASE-11 `DONE`, PHASE-12 `DONE`, PHASE-13 `DONE`
+- Soft dependencies: none
+- Synchronization: none
+- Blocking:
+  - Human-named first slice (the spec names it; Goal still requires Human authorization to write application code).
+  - Human-ratified stack in `DECISIONS.md` / `ARCHITECTURE.md`.
+- Tasks:
+  - `TASK-01-deliver-command-os-core-cadastro-agenda-os`
+  - `TASK-02-deliver-cobranca-copilot-shop-and-pilot-evidence`
+- Execution rule: Each Task is one large lot. The Builder implements the whole Task contract in one cycle (inspect → plan → implement → test → review → improve). Do not split a Task into the 14-step superpowers plan.
+- Acceptance criteria:
+  - Pilot-week loop can close with evidence.
+  - Same commands from screen and WhatsApp.
+  - Guardrails evidenced: no LLM SQL, chat confirmation v1, tenant/unidade isolation, webhook idempotency, agent-down screen still writes.

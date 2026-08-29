@@ -1,0 +1,21 @@
+# TASK-03-contract-cobranca-whatsapp-command-os
+
+- Phase: PHASE-11-domain-capability-contracts
+- Horizon: MVP
+- Specification state: DEFINED
+- Execution state: READY
+- Objective: Write WHAT contracts for cobrança PIX/link, WhatsApp copilot, command bus, confirmation protocol, and `ConfigurarNivelAcao` in one lot.
+- In scope: `.cursor/docs/product-discovery/11-contract-cobranca-copilot-command-os.md`
+- Out of scope: Choosing PSP or WhatsApp vendor, live LLM vendor, code.
+- Hard dependencies: PHASE-10 `DONE`
+- Soft dependencies: none
+- Synchronization: none
+- Allowed files: `.cursor/docs/product-discovery/11-contract-cobranca-copilot-command-os.md`
+- Forbidden: product code; LLM SQL; skipping confirmation as default
+- Acceptance criteria:
+  - Commands: `RecomendarProduto`, `NotificarPetPronto`, `EmitirCobranca`, `BaixarPagamento`, `ConfigurarNivelAcao`.
+  - Ports: Agent, WhatsAppGateway, Psp — behavior of fakes vs real left to PHASE-13.
+  - Idempotency for emit/baixa; PSP down does not close OS.
+  - Orchestrator: intent → validate catalog → confirm (v1) → handler SQL.
+  - `BaixarPagamento` has no chat confirmation.
+- Evidence: contract covers catalog, confirmation TTL/single-use, webhook shape at logical level (txid), not vendor payload.

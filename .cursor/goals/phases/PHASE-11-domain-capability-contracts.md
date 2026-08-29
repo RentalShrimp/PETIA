@@ -1,0 +1,21 @@
+# PHASE-11-domain-capability-contracts
+
+- Horizon: MVP
+- Specification state: DEFINED
+- Execution state: READY
+- Objective: Write per-domain WHAT contracts for the first slice. Large batches: identity+cadastro, agenda+OS, cobranca+WhatsApp+Command OS, timeline+isolation.
+- In scope: Contract docs (paths named in each Task). Command catalog, confirmation rules, isolation, events.
+- Out of scope: Implementing handlers, choosing Python/FastAPI, executing the superpowers plan as a script, UX pixel contracts (PHASE-12).
+- Hard dependencies: PHASE-10 `DONE` (entire Phase, not merely TASK-01)
+- Soft dependencies: none
+- Synchronization: TASK-04 waits on TASK-01, TASK-02, TASK-03
+- Blocking: none
+- Tasks:
+  - `TASK-01-contract-identity-tenancy-cadastro`
+  - `TASK-02-contract-agenda-os-banho-tosa`
+  - `TASK-03-contract-cobranca-whatsapp-command-os`
+  - `TASK-04-contract-timeline-isolation-cross-domain`
+- Acceptance criteria:
+  - Each domain contract is executable by a later Builder without asking “how should this work?” for in-scope behavior.
+  - LLM → SQL is forbidden in the autonomy contract.
+  - No product code.

@@ -1,0 +1,22 @@
+# TASK-01-deliver-command-os-core-cadastro-agenda-os
+
+- Phase: PHASE-14-first-mvp-slice-delivery
+- Horizon: MVP
+- Specification state: DEFINED
+- Execution state: READY
+- Objective: In **one large delivery lot**, implement Command OS runtime, identity/tenancy, cadastro tutor-pet, agenda, and OS banho & tosa with tests and isolation. This is a batch, not 14 micro-steps.
+- In scope: Application source as ratified in PHASE-13 / `DECISIONS.md`. Commands through `RegistrarSaidaOS`. Event projection for those commands. Shop-floor queries needed for these domains.
+- Out of scope: PIX/PSP, WhatsApp copilot, HTTP shop chrome beyond what this lot needs to prove the core, executing `.cursor/docs/superpowers/plans/2026-08-29-petia-command-os.md` as the script, 22 discovery domains.
+- Hard dependencies: PHASE-11 `DONE`, PHASE-12 `DONE`, PHASE-13 `DONE`
+- Soft dependencies: none
+- Synchronization: none
+- Blocking: Human-ratified stack; Human authorization to write application code for this named slice
+- Allowed files: application tree permitted by Accepted architecture; tests; migrations. Not protected control files. Not the first-slice spec.
+- Forbidden: LLM SQL; skipping tenant filters; implementing cobranca/copilot in this Task; micro-committing the superpowers plan tasks as the process
+- Execution rule: One inspect → plan → implement → test → review → improve cycle for the **entire** Task. Prefer few files with clear boundaries over a 14-task TDD playbook.
+- Acceptance criteria:
+  - Named commands for cadastro, agenda, OS persist via handlers with parameterized SQL and comando_log.
+  - Slot conflict, tenant mismatch, pet-first cadastro evidenced by tests.
+  - Timeline shows pet + agendamento + OS facts for this lot.
+  - No WhatsApp required for this Task to `DONE`.
+- Evidence: test commands from the ratified toolchain (or `NOT PRESENT` only if stack still unset → then this Task is `BLOCKED`, not `DONE`).

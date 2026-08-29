@@ -1,0 +1,21 @@
+# PHASE-00-product-context-audit
+
+- Horizon: DISCOVERY
+- Specification state: DEFINED
+- Execution state: READY
+- Objective: Establish the canonical product context for PETIA from files already on disk, without writing product code or choosing a stack.
+- In scope: Audit `VISION.md`, `PRINCIPLES.md`, `DECISIONS.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `PETSHOP_OS_FEATURE_DISCOVERY.md`, and `.cursor/docs/superpowers/specs/2026-08-29-petia-command-os-design.md`. Produce discovery artifacts under `.cursor/docs/product-discovery/`. Record assumptions per `DECISION_AUTONOMY.md`.
+- Out of scope: Application code, UI, APIs, stack choice, implementing the 22 discovery domains, executing `.cursor/docs/superpowers/plans/2026-08-29-petia-command-os.md`.
+- Hard dependencies: none
+- Soft dependencies: none
+- Synchronization: none
+- Blocking: none
+- Tasks:
+  - `TASK-01-audit-vision-discovery-and-first-slice-spec`
+  - `TASK-02-register-gaps-authority-and-assumptions`
+- Artifacts root: `.cursor/docs/product-discovery/`
+- Acceptance criteria:
+  - An agent with no chat history can state what PETIA is, what this Goal wave is, and which documents are stubs vs contracts.
+  - Gaps and authority conflicts are written, not remembered.
+  - No product code exists as a result of this Phase.
+- STOP: Do not treat the first-slice spec as permission to skip later DISCOVERY Phases. Do not treat the implementation plan as Accepted architecture.

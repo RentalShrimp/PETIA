@@ -1,0 +1,25 @@
+# TASK-02-deliver-cobranca-copilot-shop-and-pilot-evidence
+
+- Phase: PHASE-14-first-mvp-slice-delivery
+- Horizon: MVP
+- Specification state: DEFINED
+- Execution state: READY
+- Objective: In **one large delivery lot**, add cobrança PIX/link + webhook baixa, WhatsApp copilot with confirmation, shop surfaces, and evidence for the pilot-week loop and Command OS guardrails.
+- In scope: `EmitirCobranca`, `BaixarPagamento`, `RecomendarProduto`, `NotificarPetPronto`, `ConfigurarNivelAcao`, orchestrator+agent port, shop UI, end-to-end evidence listed in the first-slice spec §2 and §11.
+- Out of scope: Real vendor accounts if unset (use ports/fakes until Human names vendors), superpowers plan micro-steps, holding/estoque/intelligence.
+- Hard dependencies: TASK-01 of this Phase `DONE`
+- Soft dependencies: none
+- Synchronization: none
+- Blocking: same as TASK-01 if vendors are mandatory for evidence; fakes are allowed for `DONE` if contracts say ports+fakes prove the loop
+- Allowed files: application tree, tests, shop templates/routes per Accepted architecture
+- Forbidden: LLM SQL; duplicating write paths; auto-baixa via chat confirmation; weakening isolation
+- Execution rule: One large lot. Do not replay the 14-task implementation plan.
+- Acceptance criteria:
+  - Same command from screen and chat (with confirmation) produces the same effect.
+  - Duplicate sim and duplicate webhook do not double-write.
+  - Agent down: screen still schedules.
+  - Fora do catálogo refused.
+  - Confirmation expired does not persist.
+  - PSP down: OS remains open.
+  - Pilot loop can be demonstrated (tests and/or scripted scenario).
+- Evidence: tests for spec §11; isolation tests; comando_log SQL audit visible.
